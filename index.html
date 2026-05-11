@@ -2,96 +2,174 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>audiglass</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audiglass - Tienda Oficial</title>
     <style>
+        /* CONFIGURACIÓN BASE */
         body {
             background-color: #0d0d0d;
             color: white;
             font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column; /* Alinea todo hacia abajo */
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            height: auto; /* Permite que la página crezca */
-            margin: 0;
-            padding: 20px;
         }
 
         .container {
+            width: 90%;
+            max-width: 650px;
+            padding: 40px 0;
             text-align: center;
-            max-width: 600px;
-            width: 100%;
         }
 
-        .product-image {
-            width: 100%;
-            max-width: 450px;
-            border-radius: 20px;
-            box-shadow: 0 0 50px rgba(57, 255, 20, 0.2);
+        h1 {
+            color: #39FF14;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            margin-top: 50px;
+            text-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+        }
+
+        .sub-tag {
+            color: #888;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
             margin-bottom: 20px;
         }
 
+        /* EFECTOS DE IMAGEN */
+        .product-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.1);
+            margin: 20px 0;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .product-image:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 45px rgba(57, 255, 20, 0.4);
+            border: 1px solid #39FF14;
+        }
+
+        /* CUADROS DE PRECIO */
+        .precio-box {
+            background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 1px solid #222;
+        }
+
+        .monto {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin: 5px 0;
+        }
+
+        /* TABLAS DE ESPECIFICACIONES */
         table {
             width: 100%;
-            margin: 30px 0;
-            border-collapse: collapse;
-            background-color: #1a1a1a;
+            background-color: #161616;
             border-radius: 15px;
+            border-collapse: collapse;
             overflow: hidden;
+            margin: 25px 0;
         }
 
         td {
             padding: 15px;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
             text-align: left;
+            font-size: 0.9rem;
         }
 
         .categoria {
             color: #39FF14;
             font-weight: bold;
-            width: 40%;
+            width: 45%;
+            text-transform: uppercase;
+            font-size: 0.75rem;
         }
 
-        .descripcion-empresa {
-            line-height: 1.8;
-            color: #bbb;
-            text-align: justify;
-            margin: 40px 0;
-        }
-
-        .seccion-colaboradores {
-            text-align: left;
-            margin: 40px 0;
-            border-top: 1px solid #333;
-            padding-top: 20px;
-        }
-
-        .lista-nombres span {
+        /* BOTONES DE COMPRA */
+        .btn-comprar {
             display: block;
-            font-weight: bold;
-            border-left: 3px solid #39FF14;
-            padding-left: 10px;
-            margin-bottom: 10px;
-        }
-        
-        button {
             background-color: transparent;
             color: #39FF14;
             border: 2px solid #39FF14;
-            padding: 12px 40px;
+            padding: 18px;
             border-radius: 50px;
-            cursor: pointer;
-            text-transform: uppercase;
+            text-decoration: none;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            margin-bottom: 50px;
+        }
+
+        .btn-comprar:hover {
+            background-color: #39FF14;
+            color: black;
+            box-shadow: 0 0 30px #39FF14;
+            transform: translateY(-3px);
+        }
+
+        /* ESTILO ESPECIAL PARA EL BOTÓN PREMIUM */
+        .btn-premium {
+            background-color: #39FF14;
+            color: black;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.2);
+        }
+
+        /* SECCIÓN DE EQUIPO */
+        .equipo {
+            text-align: left;
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            margin-top: 60px;
+            width: 100%;
+        }
+
+        .equipo span {
+            display: block;
+            border-left: 3px solid #39FF14;
+            padding-left: 15px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #333, transparent);
+            margin: 80px 0;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>AUDIGLASS STANDARD</h1>
-        <img src="IMG-20260510-WA0001.jpg" alt="Audiglass Standard" class="product-image">
         
+        <h1>Audiglass Standard</h1>
+        <p class="sub-tag">Equilibrio Perfecto</p>
+
+        <img src="IMG-20260510-WA0001.jpg" alt="Audiglass Standard" class="product-image">
+
+        <div class="precio-box">
+            <span style="color: #888; font-size: 0.7rem; letter-spacing: 2px;">PRECIO DE LANZAMIENTO</span>
+            <span class="monto">$2,499.00</span>
+        </div>
+
         <table>
             <tr><td class="categoria">🔋 Energía</td><td>10 Horas de batería</td></tr>
             <tr><td class="categoria">📶 Conexión</td><td>Bluetooth 5.2</td></tr>
@@ -99,37 +177,37 @@
             <tr><td class="categoria">🎧 Audio</td><td>Sonido Direccional</td></tr>
         </table>
 
-        <button>Comprar Standard</button>
+        <a href="christianurieljimenezregalado-ship-it.github.io." class="btn-comprar">Comprar Standard</a>
 
-        <p class="descripcion-empresa">
-            En <strong>audiglass</strong>, estamos comprometidos con la innovación tecnológica. 
-            Nuestros dispositivos ofrecen una experiencia de audio envolvente integrada en cristales de grado premium.
-        </p>
 
-        <hr style="border: 1px solid #222; margin: 50px 0;">
-        
-        <h1>AUDIGLASS PREMIUM</h1>
-        <img src="audiglass-premium.jpg" alt="Audiglass Premium" class="product-image">
-        
+        <hr> <h1 style="text-shadow: 0 0 25px rgba(57, 255, 20, 0.6);">Audiglass Premium</h1>
+        <p class="sub-tag">The Masterpiece Edition</p>
+
+        <img src="audiglass-premium.jpg" alt="Audiglass Premium" class="product-image" style="border: 1px solid #39FF14;">
+
+        <div class="precio-box" style="border-color: #39FF14;">
+            <span style="color: #39FF14; font-size: 0.7rem; letter-spacing: 2px;">EDICIÓN EXCLUSIVA</span>
+            <span class="monto">$4,999.00</span>
+        </div>
+
         <table>
-            <tr><td class="categoria">🔋 Energía</td><td>20 Horas de batería</td></tr>
-            <tr><td class="categoria">📶 Conexión</td><td>Bluetooth 5.2 PRO</td></tr>
-            <tr><td class="categoria">📱 App</td><td>Aplicación Móvil Incluida</td></tr>
-            <tr><td class="categoria">🎧 Audio</td><td>Sonido Ambiente Mejorado</td></tr>
+            <tr><td class="categoria">💎 Materiales</td><td>Titanio y Óptica Aeroespacial</td></tr>
+            <tr><td class="categoria">🔋 Energía</td><td>20 Horas de rendimiento</td></tr>
+            <tr><td class="categoria">🔊 Audio</td><td>Sonido Espacial 360°</td></tr>
+            <tr><td class="categoria">📱 App</td><td>Control por Aplicación Móvil</td></tr>
         </table>
 
-        <button style="background-color: #39FF14; color: black;">Comprar Premium</button>
+        <a href="https://christianurieljimenezregalado-ship-it.github.io/audiglass-premium/" class="btn-comprar btn-premium">Adquirir Edición VIP</a>
 
-        <div class="seccion-colaboradores">
-            <h3>Cuerpo Directivo de Innovación</h3>
-            <div class="lista-nombres">
-                <span>Christian — Creador Web</span>
-                <span>Brandon — Director y Fundador</span>
-                <span>Adalberto — Diseñador e Innovador</span>
-            </div>
+
+        <div class="equipo">
+            <h3 style="color: #555; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Cuerpo Directivo de Innovación</h3>
+            <span>Christian — Creador Web</span>
+            <span>Brandon — Director y Fundador</span>
+            <span>Adalberto — Diseñador e Innovador</span>
         </div>
-    </div> </body>
-</html>
-        
-  
 
+    </div>
+
+</body>
+</html>
